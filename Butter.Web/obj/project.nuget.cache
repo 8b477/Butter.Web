@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OrV6tS+0IHzdP3YIUi1s2cqu0SvrotA04F8ONE0Bs67oRzyiaLcfU0d4MBwqRi59qgWihBge9ZbuW74Cr600zA==",
+  "dgSpecHash": "Hv23iU0uSO0GDl1Xii9SAo05xHoUexUoF343l6wt2cQqQH/mPTeyREAwGBYxOK5uZ4jvbyyOc4B+73H08wwLzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web_Front.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -1,9 +1,20 @@
+using Tools_RequestHTTP;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+//ADD **************
+builder.Services.AddScoped(provider => new ApiService(builder.Configuration.GetSection("url").Value));
+
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
