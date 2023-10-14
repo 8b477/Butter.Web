@@ -2989,6 +2989,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Butter_Web_DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Butter_Web_DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Butter_Web_DAL.dll": {}
+        }
+      },
+      "Tools_RequestHTTP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Butter_Web_DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tools_RequestHTTP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tools_RequestHTTP.dll": {}
+        }
       }
     }
   },
@@ -9258,11 +9281,23 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Butter_Web_DAL/1.0.0": {
+      "type": "project",
+      "path": "../Butter_Web_DAL/Butter_Web_DAL.csproj",
+      "msbuildProject": "../Butter_Web_DAL/Butter_Web_DAL.csproj"
+    },
+    "Tools_RequestHTTP/1.0.0": {
+      "type": "project",
+      "path": "../Tools_RequestHTTP/Tools_RequestHTTP.csproj",
+      "msbuildProject": "../Tools_RequestHTTP/Tools_RequestHTTP.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Butter_Web_DAL >= 1.0.0",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "Tools_RequestHTTP >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9272,9 +9307,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web.csproj",
-      "projectName": "Butter.Web",
-      "projectPath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web_Front.csproj",
+      "projectName": "Butter.Web_Front",
+      "projectPath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\Butter.Web_Front.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter.Web\\obj\\",
       "projectStyle": "PackageReference",
@@ -9296,7 +9331,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter_Web_DAL\\Butter_Web_DAL.csproj": {
+              "projectPath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Butter_Web_DAL\\Butter_Web_DAL.csproj"
+            },
+            "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Tools_RequestHTTP\\Tools_RequestHTTP.csproj": {
+              "projectPath": "C:\\Users\\jonat\\OneDrive\\Bureau\\Butter.Web\\Tools_RequestHTTP\\Tools_RequestHTTP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

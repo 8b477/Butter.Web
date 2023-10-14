@@ -1,206 +1,124 @@
 ﻿using Butter.Web.Models;
-
 using Microsoft.AspNetCore.Mvc;
 
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
+using Tools_RequestHTTP;
 
 namespace Butter.Web.Controllers
 {
     public class UserController : Controller
     {
+
+        private readonly ApiService _apiService;
+
+        public UserController(ApiService apiService)
+        {
+            _apiService = apiService;
+        }
+
+
         public IActionResult Index()
         {
             return RedirectToAction("GetAllUser");
         }
 
+
+
         [HttpGet]
-        public IActionResult GetAllUser()
+        public async Task<IActionResult> GetAllUser()
         {
-            string apiUrl = "https://localhost:7141/api/";
-
-            using (HttpClient httpClient = new())
+            List<UserModelForm>? data = await _apiService.GetAllUsersAsync();
+            if (data != null)
             {
-                httpClient.BaseAddress = new Uri(apiUrl);
-
-                HttpResponseMessage responce = httpClient.GetAsync("User").Result;
-
-                if (responce.IsSuccessStatusCode)
+                UserList viewModel = new UserList
                 {
-                    string json = responce.Content.ReadAsStringAsync().Result;
-                    List<UserModelForm>? data = JsonSerializer.Deserialize<List<UserModelForm>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    if (data is not null)
-                    {
-
-                        UserList viewModel = new UserList
-                        {
-                            Users = data
-                        };
-
-                        return View(viewModel);
-
-                    }
-                }
+                    Users = data
+                };
+                return View(viewModel);
             }
-            return View(); // redirect vers une erreur
+            return View(); // Redirection vers une vue d'erreur
         }
 
 
         [HttpGet]
-        public IActionResult GetUserById(int userId)
+        public async Task<IActionResult> GetUserById(int userId)
         {
+            UserModelForm? data = await _apiService.GetUserByIdAsync(userId);
 
-            string apiUrl = "https://localhost:7141/api/";
-
-            using (HttpClient httpClient = new())
-            {
-                httpClient.BaseAddress = new Uri(apiUrl);
-
-                HttpResponseMessage responce = httpClient.GetAsync($"User/{userId}").Result;
-
-                if (responce.IsSuccessStatusCode)
+                if (data != null)
                 {
-                    string json = responce.Content.ReadAsStringAsync().Result;
-                    UserModelForm? data = JsonSerializer.Deserialize<UserModelForm>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    if (data is not null)
-                    {
-
-                        return View(data);
-
-                    }
+                    return View(data);
                 }
-            }
 
-            return View(); // => redirect vers une erreur
+            return View(); // Redirection vers une vue d'erreur
         }
+
+
 
 
         [HttpGet]
-        public IActionResult DeleteUser(int userId)
+        public async Task<IActionResult> DeleteUser(int userId)
         {
-            string apiUrl = "https://localhost:7141/api/";
+            bool isSuccess = await _apiService.DeleteUserAsync(userId);
 
-            using (HttpClient httpClient = new())
-            {
-                httpClient.BaseAddress = new Uri(apiUrl);
-
-                HttpResponseMessage responce = httpClient.DeleteAsync($"User/{userId}").Result;
-
-                if (responce.IsSuccessStatusCode)
+                if (isSuccess)
                 {
-                        return RedirectToAction("GetAllUser");                
+                    return RedirectToAction("GetAllUser");
                 }
 
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
         }
+
+
 
         
-        public IActionResult CreateUser(UserModelCreateUserForm user)
+        public async Task<IActionResult> CreateUser(UserModelCreateUserForm user)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                string apiUrl = "https://localhost:7141/api/";
+                bool isSuccess = await _apiService.CreateUserAsync(user);
 
-                using (HttpClient httpClient = new HttpClient())
-                {
-                    httpClient.BaseAddress = new Uri(apiUrl);
-
-                    
-                    string json = JsonSerializer.Serialize(user);
-
-                    
-                    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                    
-                    HttpResponseMessage response = httpClient.PostAsync("User", content).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    if (isSuccess)
                     {
-                        
                         return RedirectToAction("GetAllUser");
                     }
                     else
                     {
                         return View(user);
                     }
-                }
             }
-                return View(user);
+
+            return View(user);
         }
 
 
 
-        public IActionResult UpdateUser(int userId)
+        [HttpGet]
+        public async Task<IActionResult> UpdateUser(int userId)
         {
+            UserModelUpdateForm? userUp = await _apiService.GetUserForUpdateAsync(userId);
 
-            using (HttpClient httpClient = new())
-            {
-                httpClient.BaseAddress = new Uri("https://localhost:7141/api/");
-
-                HttpResponseMessage responce = httpClient.GetAsync($"User/{userId}").Result;
-
-                if (responce.IsSuccessStatusCode)
+                if (userUp != null)
                 {
-                    string json = responce.Content.ReadAsStringAsync().Result;
-                    UserModelForm? data = JsonSerializer.Deserialize<UserModelForm>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    if (data is not null)
-                    {
-
-                        UserModelUpdateForm userModel = new()
-                        {
-                            Id = data.UserId,
-                            NickName = data.NickName,
-                            Email = data.Email,
-                            BirthDate = data.BirthDate,
-                            Password = data.Password,
-                            Genre = data.Genre,
-                            Town = data.Town
-                        };
-
-                        return View(userModel);
-                    }
+                    return View(userUp);
                 }
 
-            }
             return RedirectToAction(nameof(GetAllUser));
-
         }
 
 
 
-        public IActionResult UpdateSaveUser(UserModelUpdateForm userUp)
+        [HttpPost]
+        public async Task<IActionResult> UpdateSaveUser(UserModelUpdateForm userUp)
         {
-
             if (ModelState.IsValid)
             {
+                bool isSuccess = await _apiService.UpdateUserAsync(userUp);
 
-            string apiUrl = "https://localhost:7141/api/User/Update";
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = new Uri(apiUrl);
-
-
-                string json = JsonSerializer.Serialize(userUp);
-
-
-                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
-
-                HttpResponseMessage response = httpClient.PatchAsync(apiUrl, content).Result;
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
+                    if (isSuccess)
+                    {
+                        return RedirectToAction("Index");
+                    }
             }
-
-        }
 
             return RedirectToAction(nameof(GetAllUser));
         }

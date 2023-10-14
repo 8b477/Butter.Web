@@ -1,0 +1,15 @@
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.csproj.AssemblyReference.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.AssemblyInfoInputs.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.AssemblyInfo.cs
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.csproj.CoreCompileInputs.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\bin\Debug\net6.0\Tools_RequestHTTP.deps.json
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\bin\Debug\net6.0\Tools_RequestHTTP.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\bin\Debug\net6.0\Tools_RequestHTTP.pdb
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\bin\Debug\net6.0\Butter_Web_DAL.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\bin\Debug\net6.0\Butter_Web_DAL.pdb
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.csproj.CopyComplete
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\refint\Tools_RequestHTTP.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\Tools_RequestHTTP.pdb
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Tools_RequestHTTP\obj\Debug\net6.0\ref\Tools_RequestHTTP.dll

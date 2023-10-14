@@ -1,0 +1,12 @@
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\bin\Debug\net6.0\Butter_Web_DAL.deps.json
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\bin\Debug\net6.0\Butter_Web_DAL.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\bin\Debug\net6.0\Butter_Web_DAL.pdb
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.csproj.AssemblyReference.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.AssemblyInfoInputs.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.AssemblyInfo.cs
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.csproj.CoreCompileInputs.cache
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\refint\Butter_Web_DAL.dll
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\Butter_Web_DAL.pdb
+C:\Users\jonat\OneDrive\Bureau\Butter.Web\Butter_Web_DAL\obj\Debug\net6.0\ref\Butter_Web_DAL.dll

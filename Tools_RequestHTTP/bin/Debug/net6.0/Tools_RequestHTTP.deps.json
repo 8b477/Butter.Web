@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Tools_RequestHTTP/1.0.0": {
+        "dependencies": {
+          "Butter_Web_DAL": "1.0.0"
+        },
+        "runtime": {
+          "Tools_RequestHTTP.dll": {}
+        }
+      },
+      "Butter_Web_DAL/1.0.0": {
+        "runtime": {
+          "Butter_Web_DAL.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tools_RequestHTTP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Butter_Web_DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
